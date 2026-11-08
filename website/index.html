@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Laundry & Jemur Pakaian Profesional</title>
+    <!-- Google Fonts & FontAwesome untuk Ikon -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0077b6;
+            --secondary-color: #00b4d8;
+            --accent-color: #90e0ef;
+            --dark-color: #1d3557;
+            --light-color: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header & Navbar */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 119, 182, 0.85), rgba(0, 180, 216, 0.85)), url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 160px 20px 100px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .btn-wa:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--dark-color);
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .card .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .card ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .card ul li i {
+            color: var(--secondary-color);
+            margin-right: 8px;
+        }
+
+        .card .btn-order {
+            display: block;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .card .btn-order:hover {
+            background: var(--dark-color);
+        }
+
+        /* Why Us Section */
+        .features {
+            margin-top: 80px;
+            background: white;
+            padding: 50px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .feature-item h4 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 80px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @media(max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">Clean<span>Express</span></div>
+            <ul class="nav-links">
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#layanan">Daftar Harga</a></li>
+                <li><a href="#keunggulan">Keunggulan</a></li>
+                <li><a href="https://wa.me/6285143771835" target="_blank">Kontak</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Jasa Laundry & Jemur Pakaian Rapih & Wangi</h1>
+        <p>Solusi pakaian bersih, kering sempurna dengan penjemuran higienis, siap disetrika dan diantar ke rumah Anda.</p>
+        <a href="https://wa.me/6285143771835?text=Halo,%20saya%20tertarik%20dengan%20jasa%20laundry%20dan%20jemur%20pakaian." class="btn-wa" target="_blank">
+            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+        </a>
+    </section>
+
+    <!-- Content / Pricing Section -->
+    <div class="container" id="layanan">
+        <h2 class="section-title">Paket & Daftar Harga</h2>
+        <div class="pricing-grid">
+            
+            <!-- Paket Hemat -->
+            <div class="card">
+                <h3>Paket Reguler Jemur</h3>
+                <div class="price">Rp150.000</div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Cuci + Jemur Bersih</li>
+                    <li><i class="fas fa-check"></i> Kapasitas hingga 15 Kg</li>
+                    <li><i class="fas fa-check"></i> Pewangi Standar Tahan Lama</li>
+                    <li><i class="fas fa-check"></i> Estimasi Selesai 2 Hari</li>
+                </ul>
+                <a href="https://wa.me/6285143771835?text=Halo,%20saya%20ingin%20memesan%20Paket%20Reguler%20Jemur%20sebesar%20Rp150.000" class="btn-order" target="_blank">Pilih Paket</a>
+            </div>
+
+            <!-- Paket Komplit -->
+            <div class="card">
+                <h3>Paket Komplit Setrika</h3>
+                <div class="price">Rp300.000</div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Cuci + Jemur + Setrika Rapih</li>
+                    <li><i class="fas fa-check"></i> Kapasitas hingga 30 Kg</li>
+                    <li><i class="fas fa-check"></i> Premium Softener & Pewangi</li>
+                    <li><i class="fas fa-check"></i> Gratis Antar Jemput (Radius 5km)</li>
+                </ul>
+                <a href="https://wa.me/6285143771835?text=Halo,%20saya%20ingin%20memesan%20Paket%20Komplit%20Setrika%20sebesar%20Rp300.000" class="btn-order" target="_blank">Pilih Paket</a>
+            </div>
+
+            <!-- Paket Bulanan / VIP -->
+            <div class="card">
+                <h3>Paket VIP Bulanan</h3>
+                <div class="price">Rp450.000</div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Layanan Full Cuci, Jemur & Setrika</li>
+                    <li><i class="fas fa-check"></i> Kapasitas hingga 50 Kg / Bulan</li>
+                    <li><i class="fas fa-check"></i> Perawatan Khusus Pakaian Mewah</li>
+                    <li><i class="fas fa-check"></i> Prioritas Utama & Antar Jemput Gratis</li>
+                </ul>
+                <a href="https://wa.me/6285143771835?text=Halo,%20saya%20ingin%20memesan%20Paket%20VIP%20Bulanan%20sebesar%20Rp450.000" class="btn-order" target="_blank">Pilih Paket</a>
+            </div>
+
+        </div>
+
+        <!-- Keunggulan Section -->
+        <div class="features" id="keunggulan">
+            <h2 class="section-title" style="margin-bottom: 20px; font-size: 1.8rem;">Kenapa Memilih Kami?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-sun"></i>
+                    <h4>Jemuran Higienis</h4>
+                    <p>Pakaian dijemur di area terbuka yang bersih, terkena sinar matahari langsung agar bebas dari bakteri dan lembab.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-tshirt"></i>
+                    <h4>Bersih & Wangi</h4>
+                    <p>Menggunakan deterjen berkualitas tinggi dan pewangi pilihan yang tahan lama sepanjang hari.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h4>Tepat Waktu</h4>
+                    <p>Pakaian diproses dengan cepat dan dikembalikan sesuai dengan estimasi waktu yang dijanjikan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 CleanExpress Laundry. All Rights Reserved. | Hubungi Kami: 0851-4377-1835</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6285143771835?text=Halo,%20saya%20ingin%20bertanya%20mengenai%20layanan%20laundry." class="whatsapp-float" target="_blank" title="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
